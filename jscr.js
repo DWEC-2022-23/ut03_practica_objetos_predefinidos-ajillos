@@ -1,21 +1,21 @@
-document.getElementById("rey").onclick = function(){
-       var dia=prompt("Escribe el dia");
+function reyes(){
+    var dia=prompt("Escribe el dia");
     var mes=prompt("Escribe el mes");
     var ano=prompt("Escribe el año");
     var d = new Date(ano,mes,dia);
-    var anorey=d.getFullYear()+1;
-    const fechaReyes=new Date(anorey,01,06)
-    if(d.getDate()==6 && d.getMonth()==1){
+    var anorey=d.getFullYear();
+    if(d.getDate()<6 && d.getMonth()==1){
+        
+    }else{
         anorey=anorey+1;
-    }else if(d.getDate()<6 && d.getMonth()==1){
-        anorey=anorey-2;
     }
     let ms = 1000 * 60 * 60 * 24;
-    var dif=Math.ceil(fechaReyes.getTime()-d.getTime())/ms;
+    const fechaReyes=new Date(anorey,01,06)
+    var dif=Math.ceil((fechaReyes.getTime()-d.getTime())/ms);
     alert("Quedan "+dif+" dias para reyes");
 }
 
-document.getElementById("fechaActual").onclick = function(){
+function fechaActual(){
     var d=new Date();
     var year=d.getFullYear();
     var month=d.getMonth();
@@ -88,27 +88,21 @@ document.getElementById("fechaActual").onclick = function(){
     }
     alert("Hoy es "+nomDia+", "+date+" de "+nomMes+" de "+year+" y son las "+hour+":"+min); 
 }
-function calcularAreaCirculo(radio){
-    var ra = Integer.parseInt("radio");
+var rad=document.getElementById('radio').value
+function calcularAreaCirculo(){
+    var ra = parseInt(rad)
     var area=Math.PI*Math.pow(ra,2);
     var per=2*Math.PI*ra;
     var area2decimales=area.toFixed(2);
     var per2decimales=per.toFixed(2);
-    return "Tiene "+area2decimales+" m de area y "+per2decimales+" m de perimetro";
+    alert("Tiene "+area2decimales+" m de area y "+per2decimales+" m de perimetro");
 }
 function calcularAleatorio(){
     var prin=prompt("Escribe first");
     var fin=prompt("Escribe final");
     max=Math.floor(fin);
     min=Math.ceil(prin);
-    var random=Math.random() * (max - min+1) + min;
+    var random=Math.random() * (max - min) + min;
     var randomDec=random.toFixed(2);
     alert(randomDec);
-}
-document.getElementById("caraterMitad").onclick = function(){    var a=5;
-    alert("Hola");
-    //var texto=prompt("Escribe el texto");
-    //var mit=parseInt(text.length/2);
-    //var sol=text.substring(0,mit);
-    alert(a);
 }
