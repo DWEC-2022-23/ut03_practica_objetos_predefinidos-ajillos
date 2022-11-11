@@ -1,51 +1,51 @@
-function reyesMagos(){
-    var dia=prompt("Escribe el dia");
+document.getElementById("rey").onclick = function(){
+       var dia=prompt("Escribe el dia");
     var mes=prompt("Escribe el mes");
     var ano=prompt("Escribe el año");
-	var d = new Date(ano,mes,dia);
-	var anorey=d.getFullYear()+1;
+    var d = new Date(ano,mes,dia);
+    var anorey=d.getFullYear()+1;
     const fechaReyes=new Date(anorey,01,06)
     if(d.getDate()==6 && d.getMonth()==1){
-    	anorey=anorey+1;
+        anorey=anorey+1;
     }else if(d.getDate()<6 && d.getMonth()==1){
         anorey=anorey-2;
     }
     let ms = 1000 * 60 * 60 * 24;
     var dif=Math.ceil(fechaReyes.getTime()-d.getTime())/ms;
-	return "Quedan "+dif+" dias para reyes";
+    alert("Quedan "+dif+" dias para reyes");
 }
 
-function fechaActual(){
+document.getElementById("fechaActual").onclick = function(){
     var d=new Date();
     var year=d.getFullYear();
     var month=d.getMonth();
     var date=d.getDate();
     var dia=d.getDay();
-    var hour=d.getHour();
+    var hour=d.getHours();
     var min=d.getMinutes();
     var nomDia;
     var nomMes;
     switch(dia){
         case 0:
-            nomDia="Lunes";
+            nomDia="Domingo";
         break;
         case 1:
-            nomDia="Martes";
+            nomDia="Lunes";
         break;
         case 2:
-            nomDia="Miercoles";
+            nomDia="Martes";
         break;
         case 3:
-            nomDia="Jueves";
+            nomDia="Miercoles";
         break;
         case 4:
-            nomDia="Viernes";
+            nomDia="Jueves";
         break;
         case 5:
-            nomDia="Sabado";
+            nomDia="Viernes";
         break;
         case 6:
-            nomDia="Domingo";
+            nomDia="Sabado";
         break;
     }
     switch(month){
@@ -88,20 +88,27 @@ function fechaActual(){
     }
     alert("Hoy es "+nomDia+", "+date+" de "+nomMes+" de "+year+" y son las "+hour+":"+min); 
 }
-function calcularAreaCirculo(Radio){
-    var ra = Integer.parseInt(Radio);
+function calcularAreaCirculo(radio){
+    var ra = Integer.parseInt("radio");
     var area=Math.PI*Math.pow(ra,2);
     var per=2*Math.PI*ra;
-    area2decimales=area.toFixed(2);
-    per2decimales=per.toFixed(2);
+    var area2decimales=area.toFixed(2);
+    var per2decimales=per.toFixed(2);
     return "Tiene "+area2decimales+" m de area y "+per2decimales+" m de perimetro";
 }
 function calcularAleatorio(){
     var prin=prompt("Escribe first");
     var fin=prompt("Escribe final");
-    var random=Math.random() * (fin - prin+1) + prin;
+    max=Math.floor(fin);
+    min=Math.ceil(prin);
+    var random=Math.random() * (max - min+1) + min;
     var randomDec=random.toFixed(2);
-    return randomDec;
+    alert(randomDec);
 }
-
-
+document.getElementById("caraterMitad").onclick = function(){    var a=5;
+    alert("Hola");
+    //var texto=prompt("Escribe el texto");
+    //var mit=parseInt(text.length/2);
+    //var sol=text.substring(0,mit);
+    alert(a);
+}
