@@ -109,7 +109,7 @@ function calcularAleatorio(){
 function contarVocales(){
     var texto=prompt("Escribe el texto");
     var mit=texto.charAt(texto.length/2);
-    var ult=texto.charAt(texto.length-1);
+    var ulti=texto.charAt(texto.length-1);
     var inv=texto.split("").reverse();
     var gui;
     var vocales="aeiou";
@@ -124,5 +124,5 @@ function contarVocales(){
             gui=gui+texto.charAt(i)
         }
     }
-    alert("Como caracter de la mitad "+mit+", como ultimo caracter "+ult+", como inverso "+inv+", separado en guiones "+gui+", numero de vocales "+contVoc);
+    alert("Como caracter de la mitad "+mit+", como ultimo caracter "+ulti+", como inverso "+inv+", separado en guiones "+gui+", numero de vocales "+contVoc);
 }
