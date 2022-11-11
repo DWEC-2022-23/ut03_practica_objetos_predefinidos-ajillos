@@ -88,8 +88,9 @@ function fechaActual(){
     }
     alert("Hoy es "+nomDia+", "+date+" de "+nomMes+" de "+year+" y son las "+hour+":"+min); 
 }
-var rad=document.getElementById('radio').value();
+
 function calcularAreaCirculo(){
+    var rad=document.getElementById('radio').value();
     var ra = parseInt(rad)
     var area=Math.PI*Math.pow(ra,2);
     var per=2*Math.PI*ra;
