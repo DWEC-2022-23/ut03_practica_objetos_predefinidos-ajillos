@@ -106,3 +106,23 @@ function calcularAleatorio(){
     var randomDec=random.toFixed(2);
     alert(randomDec);
 }
+function contarVocales(){
+    var texto=prompt("Escribe el texto");
+    var mit=texto.charAt(texto.length/2);
+    var ult=texto.charAt(texto.length);
+    var inv=texto.split("").reverse();
+    var gui;
+    var vocales="aeiou";
+    var contVoc=0;
+    for(var i=0;i<texto.length;i++){
+        if(vocales.includes(texto.charAt(i))==true){
+            contVoc++
+        }
+        if(i!=texto.length-1){
+            gui=gui+texto.charAt(i)+"-"
+        }else{
+            gui=gui+texto.charAt(i)
+        }
+    }
+    alert("Como caracter de la mitad "+mit+", como ultimo caracter "+ult+", como ultimo caracter "+ult+", como inverso "+inv+", separado en guiones "+gui+", numero de vocales "+contVoc);
+}
